@@ -3,6 +3,7 @@ import { PokeNome } from "./components/PokeNome";
 import { PokeInfos } from "./components/PokeInfos";
 import { PokeFoto } from "./components/PokeFoto";
 import { useEffect, useState } from "react";
+import { PokeEstatisticas } from "./components/PokeEstatisticas";
 
 function App() {
   const [pokename, setPokename] = useState('');
@@ -24,6 +25,7 @@ function App() {
         <PokeNome pokename={pokename}/>
         <PokeFoto pokedata={pokedata}/>
         <PokeInfos pokedata={pokedata}/>
+        <PokeEstatisticas pokedata={pokedata} />
         {/* TODO: 
           -> Foto;
           -> Estatísticas.
