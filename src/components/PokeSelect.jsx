@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const PokeSelect = ({ pokename, setPokename }) => {
+export const PokeSelect = ({ pokename, setPokename }) => {
   PokeSelect.propTypes = {
     pokename: PropTypes.string,
     setPokename: PropTypes.func
@@ -40,5 +40,3 @@ const PokeSelect = ({ pokename, setPokename }) => {
   );
   
 };
-
-export default PokeSelect;
