@@ -19,10 +19,10 @@ export const PokeSelect = ({ pokename, setPokename }) => {
   
   return (
     <>
-      <label htmlFor="#pokeSelect">Selecione um Pokémon: </label>
+      <label htmlFor="#poke-select">Selecione um Pokémon: </label>
       <select 
-        name="pokeSelect"
-        id="pokeSelect"
+        name="poke-select"
+        id="poke-select"
         value={pokename}
         onChange={(e) => setPokename(e.target.value)}
       >

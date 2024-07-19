@@ -1,6 +1,7 @@
-import PokeSelect from "./components/PokeSelect";
+import { PokeSelect } from "./components/PokeSelect";
 import { PokeNome } from "./components/PokeNome";
 import { PokeInfos } from "./components/PokeInfos";
+import { PokeFoto } from "./components/PokeFoto";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
       </header>
       <main>
         <PokeNome pokename={pokename}/>
+        <PokeFoto pokedata={pokedata}/>
         <PokeInfos pokedata={pokedata}/>
-        
         {/* TODO: 
           -> Foto;
           -> Estatísticas.
