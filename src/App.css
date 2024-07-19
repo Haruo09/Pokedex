@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#root {
+    background-color: rgb(169, 185, 187);
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px #0000000a;
+}
+
+#root header {
+    background-color: white;
+    padding: 15px;
+    margin: 0px;
+    border-radius: 15px 15px 0 0;
+}
+
+#root main {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 15px;
+    gap: 15px;
+}
+
+#root main #left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#root main h1, #root main #pokenome {
+    margin: 0;
+    padding: 0.07em;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+#root main #pokefoto {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#root main #pokefoto img {
+    height: 100%;
+    width: 475px;
+}
+
+#root main #right {
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto auto;
+    gap: 15px;
+}
+
+#root main #right h2 {
+    margin: 0;
+}
+
+#root main #right div {
+    background-color: white;
+    padding: 10px;
+    line-height: 1.0;
+    font-size: .8rem;
+    border-radius: 5px;
+}
+
+#root footer {
+    padding: .3rem 15px;
+    border-radius: 0 0 15px 15px;
+    background-color: white;
+}
