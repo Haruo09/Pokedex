@@ -1,13 +1,13 @@
 import PropTypes from 'prop-types';
 
-export const PokeNome = ({ pokeNome }) => {
+export const PokeNome = ({ pokename }) => {
   PokeNome.propTypes = {
-    pokeNome: PropTypes.string
+    pokename: PropTypes.string
   }
 
   return (
-    <div>
-      <h1>{pokeNome}</h1>
+    <div id='pokenome'>
+      <h1>{pokename}</h1>
     </div>
   )
 }

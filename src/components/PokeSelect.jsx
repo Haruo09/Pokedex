@@ -1,26 +1,32 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-const PokeSelect = ({ setPokename }) => {
+const PokeSelect = ({ pokename, setPokename }) => {
   PokeSelect.propTypes = {
+    pokename: PropTypes.string,
     setPokename: PropTypes.func
   }
 
   const [pokeList, setPokeList] = useState([]);
-  // const BASE_URL = "https://pokemon.danielpimentel.com.br/v1/";
+  const BASE_URL = "https://pokemon.danielpimentel.com.br/v1/";
 
   useEffect(() => {
-    fetch('https://pokemon.danielpimentel.com.br/v1/pokemon/lista')
+    fetch(BASE_URL + "pokemon/lista")
       .then((response) => response.json())
       .then((data) => setPokeList(data['pokemon']))
       .catch((error) => console.error(error));
-      
     }, []);
   
   return (
     <>
       <label htmlFor="#pokeSelect">Selecione um Pokémon: </label>
-      <select name="pokeSelect" id="pokeSelect" onChange={(e) => setPokename(e.target.value)}>
+      <select 
+        name="pokeSelect"
+        id="pokeSelect"
+        value={pokename}
+        onChange={(e) => setPokename(e.target.value)}
+      >
+        {/* <option id='nullopt' value={""}></option> */}
         {pokeList.map((pokemon) => (
           <option 
             key={pokemon.numero}

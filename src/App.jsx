@@ -1,21 +1,30 @@
 import PokeSelect from "./components/PokeSelect";
 import { PokeNome } from "./components/PokeNome";
-import { useState } from "react";
+import { PokeInfos } from "./components/PokeInfos";
+import { useEffect, useState } from "react";
 
 function App() {
   const [pokename, setPokename] = useState('');
+  const [pokedata, setPokedata] = useState({});
+
+  useEffect(() => {
+    fetch("https://pokemon.danielpimentel.com.br/v1/pokemon/nome/" + pokename)
+      .then((response) => response.json())
+      .then((data) => {setPokedata(data['pokemon'])})
+      .catch((err) => console.log(err))
+    ;
+  }, [pokename]);
   return (
     <>
       <header>
-        <PokeSelect setPokename={setPokename}/>
-        <PokeNome pokeNome={pokename}/>
+        <PokeSelect pokename={pokename} setPokename={setPokename}/>
       </header>
       <main>
+        <PokeNome pokename={pokename}/>
+        <PokeInfos pokedata={pokedata}/>
         
         {/* TODO: 
-          -> Nome;
           -> Foto;
-          -> Informações;
           -> Estatísticas.
          */}
       </main>
