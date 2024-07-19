@@ -20,7 +20,17 @@ export const PokeInfos = ({ pokedata }) => {
       </div>
     ) 
   }
+
   catch (TypeError) {
-    console.log("Não foi possível carregar");
+    return (
+      <div id='pokeinfos'>
+        <h2>Informações</h2>
+        <p>Número: #0</p>
+        <p>Peso: 0.0 kg</p>
+        <p>Altura: 0 cm</p>
+        <p>Tipo: nenhum</p>
+        <p>Geração: 0</p>
+      </div>
+    )
   }
 }
