@@ -6,19 +6,15 @@ export const PokeEvolucoes = ({ pokedata }) => {
     pokedata: PropTypes.object
   };
 
-  try {
-    return (
-      <div id='poke-evolucoes'>
-        <p>Evoluções: {pokedata['evolucoes']}</p>
-      </div>
-    )
-  }
-
-  catch (TypeError) {
-    return (
-      <div id='poke-evolucoes'>
-        ...
-      </div>
-    )
-  }
+  return (
+    <div id='poke-evolucoes'>
+      {(!pokedata) ? 
+        (
+          <p>...</p>
+        ) : (
+          <p>Evoluções: {pokedata['evolucoes']}</p>
+        )
+      }
+    </div>
+  )
 }
