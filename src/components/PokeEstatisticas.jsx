@@ -7,10 +7,10 @@ export const PokeEstatisticas = ({ pokedata }) => {
 
   return (
     <div id="poke-estatisticas">
+      <h2>Estatísticas</h2>
       {
         (!pokedata) ? ( 
           <>
-            <h2>Estatísticas</h2>
             <p>Hp: 0</p>
             <p>Atk: 0</p>
             <p>Def: 0</p>

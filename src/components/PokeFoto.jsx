@@ -7,13 +7,13 @@ export const PokeFoto = ({ pokedata }) => {
     return (
       <div id='pokefoto'>
         {
-          (!pokedata) ? (
+          (!pokedata || !pokedata['img']) ? (
             <img 
               src={"./public/notFound.png"}
-              alt="foto do pokémon"
+              alt="foto não encontrada"
             />
           ) : (
-            <img 
+            <img
               src={pokedata['img']}
               alt="foto do pokémon"
             />

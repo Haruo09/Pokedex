@@ -8,13 +8,7 @@ export const PokeEvolucoes = ({ pokedata }) => {
 
   return (
     <div id='poke-evolucoes'>
-      {(!pokedata) ? 
-        (
-          <p>...</p>
-        ) : (
-          <p>Evoluções: {pokedata['evolucoes']}</p>
-        )
-      }
+      <p>Evoluções: {(!pokedata || !pokedata['evolucoes'])?(<>Nenhuma</>):(pokedata['evolucoes'])} </p>
     </div>
   )
 }
