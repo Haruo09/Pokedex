@@ -9,13 +9,14 @@ export const PokeInfos = ({ pokedata }) => {
   }
 
   try {
+    console.log(pokedata['tipo'].split(','));
     return (
       <div id='pokeinfos'>
         <h2>Informações</h2>
         <p>Número: #{pokedata['numero']}</p>
         <p>Peso: {pokedata['peso']/1000} kg</p>
         <p>Altura: {pokedata['altura']} cm</p>
-        <p>Tipo: {pokedata['tipo'].split(',').map((tipo) => (<span key={v1()}>{tipo} </span>))}</p>
+        <p>Tipo: {pokedata['tipo'].split(',').map((tipo) => (<img key={v1()} src={`./public/types icons/${tipo}.webp`}/>))}</p>
         <p>Geração: {pokedata['geracao']}</p>
       </div>
     ) 
