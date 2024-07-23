@@ -9,18 +9,28 @@ import './App.css';
 
 
 function App() {
+  const [bgcolor, setBgcolor] = useState("#fff");
   const [pokename, setPokename] = useState('');
   const [pokedata, setPokedata] = useState({});
 
   useEffect(() => {
     fetch("https://pokemon.danielpimentel.com.br/v1/pokemon/nome/" + pokename)
       .then((response) => response.json())
-      .then((data) => {setPokedata(data['pokemon'])})
+      .then((data) => { setPokedata(data['pokemon']); })
       .catch((err) => console.log(err))
     ;
   }, [pokename]);
+
+  useEffect(() => {
+    fetch("./public/bgcolors.json")
+      .then((response) => (response.json()))
+      .then((data) => { setBgcolor(data[pokedata['tipo'].split(',')[0]]); })
+      .catch(() => console.log("Nenhum pokémon selecionado"))
+    ;
+  }, [pokedata]);
+
   return (
-    <>
+    <div className="App" style={{'backgroundColor': bgcolor}}>
       <header>
         <PokeSelect pokename={pokename} setPokename={setPokename}/>
       </header>
@@ -37,7 +47,7 @@ function App() {
       <footer>
         <PokeEvolucoes pokedata={pokedata} />
       </footer>
-    </>
+    </div>
   )
 }
 

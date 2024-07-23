@@ -5,6 +5,10 @@ body {
     align-items: center;
 }
 
+.App {
+    border-radius: 15px;
+}
+
 #root {
     background-color: rgb(169, 185, 187);
     border-radius: 15px;
